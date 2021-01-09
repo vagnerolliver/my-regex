@@ -1,0 +1,35 @@
+^\d{3}.\d{3}.\d{3}-\d{2}$
+
+123.123.123-13
+321.321.321-90
+231.300.400.50
+
+replace [.-] 
+-> vazio
+
+
+
+^(\w+),\s(\w+)$
+
+Wendell, Erick
+Xuxa, Menghel
+Fulano, Bolanhos
+
+replace ^(\w+),\s(\w+)$ 
+-> {firstName: "$2", lastName: "$1"}
+
+
+
+
+\[(.*?)\]\((https|http.*?)\)
+
+O [Vágner Oliveira](https://www.vagnerolliver.com) faz palestras no [Google](https://www.google.com) você deveria seguir no [Twitter](https://www.twitter/vagnerolliver) ou até mesmo 
+no [Linkedin](https://www.linkedin.com/vagnerolliver).
+
+Você pesquisar no [Google](http://www.google.com) 
+
+Vai que vai
+
+replace \[(.*?)\]\((https|http.*?)\)
+-> <a href="$1">$2</a>
+
