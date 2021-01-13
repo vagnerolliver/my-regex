@@ -9,4 +9,5 @@ const pdf = require('pdf-parse')
     const dataBuffer = await readFile((join(__dirname, './../../../docs/contrato.pdf')))
     const data = await pdf(dataBuffer)
     console.log('data', data.text)
+
 })()
