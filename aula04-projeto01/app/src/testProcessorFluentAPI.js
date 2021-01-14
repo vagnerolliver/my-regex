@@ -1,4 +1,5 @@
 const { evaluateRegex } = require('./utils')
+const  Person = require('./person')
 
 
 class TextProcessoFluentAPI {
@@ -46,6 +47,12 @@ class TextProcessoFluentAPI {
         const trimSpaces = evaluateRegex(/^\s+|\s+$|\n/g)
         this.#content = this.#content.map(line => line.map(item => item.replace(trimSpaces, "")))
         
+        return this
+    }
+
+    mapPerson() {
+        this.#content = this.#content.map(line => new Person(line))
+
         return this
     }
 
